@@ -8,7 +8,7 @@
     "start": "npm-run-all --parallel open:src",
     "test:mocha": "mocha --reporter spec build-scripts/testSetup.js \"src/**/*.test.js\"",
     "test:casper": "casperjs test tests/",
-    "test": "npm-run-all --parallel test:mocha",
+    "test": "npm-run-all --parallel test:mocha test:casper",
     "prepare-dist": "rimraf ./dist && mkdir dist && echo 'groovy-yoke.surge.sh' > ./dist/CNAME",
     "prebuild": "npm-run-all prepare-dist",
     "build": "babel-node build-scripts/build.js"
